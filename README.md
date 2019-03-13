@@ -6,11 +6,11 @@ The password API query follows the secure way of querying the API, as described 
 
 `pwned-password.py` code excerpt: 
 ```python
-    password_hash = hashlib.sha1(password.encode()).hexdigest().upper()  # password is SHA-1 hashed
-    password = ''  # then erased
+password_hash = hashlib.sha1(password.encode()).hexdigest().upper()  # password is SHA-1 hashed
+password = ''  # then erased
 
-    password_hash_prefix = password_hash[:5]  # this part is sent to the query URL
-    password_hash_suffix = password_hash[5:]  # this part is used to lookup the hash locally in the query response content
+password_hash_prefix = password_hash[:5]  # this part is sent to the query URL
+password_hash_suffix = password_hash[5:]  # this part is used to lookup the hash locally in the query response content
 ```
 
 

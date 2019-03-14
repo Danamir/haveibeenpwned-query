@@ -63,7 +63,7 @@ def main():
     # fetch matching hashes
     r = requests.get(url)
 
-    pwns = json.loads(r.content)
+    pwns = json.loads(r.content or '{}')
 
     if debug:
         print(json.dumps(pwns, indent=4))

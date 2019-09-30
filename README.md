@@ -1,6 +1,9 @@
 # haveibeenpwned-query
 Simple query to Have I been Pwned API.
 
+2019-09 : ***The *Have I been pwned* account API is now covered by a $3.5/month fee and is no longer supported by this script.***  
+*However, the password API is still functional at the moment.*
+
 #### Notes
 The password API query follows the secure way of querying the API, as described in [this article](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/#cloudflareprivacyandkanonymity). Only the first 5 characters of the SHA-1 hash are sent to the query URL.
 
@@ -12,7 +15,6 @@ password = ''  # then erased
 password_hash_prefix = password_hash[:5]  # this part is sent to the query URL
 password_hash_suffix = password_hash[5:]  # this part is used to lookup the hash locally in the query response content
 ```
-
 
 #### Installation
 

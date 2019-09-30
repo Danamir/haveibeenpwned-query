@@ -1,5 +1,8 @@
 #!python
-"""Have I been Pwned account database check.
+"""!!DEPRECATED!! The Have I been pwned account API is now covered by a $3.5/month fee
+and is no longer supported by this script.
+
+Have I been Pwned account database check.
 
 Usage: pwned-account [--help] [options] [ACCOUNT]
 
@@ -53,7 +56,7 @@ def main():
         raise RuntimeWarning('Empty account.')
 
     # API URL
-    url = 'https://haveibeenpwned.com/api/v2/breachedaccount/%s' % account
+    url = 'https://haveibeenpwned.com/api/v3/breachedaccount/%s' % account
 
     # verbose
     if verbose:
@@ -62,6 +65,12 @@ def main():
 
     # fetch matching hashes
     r = requests.get(url)
+
+    #  handle HTTP errors
+    if not r.ok:
+        print('Wrong API response, HTTP status code: %s' % r.status_code)
+        print(r.content)
+        exit(1)
 
     pwns = json.loads(r.content or '{}')
 

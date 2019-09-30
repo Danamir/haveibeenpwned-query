@@ -70,6 +70,12 @@ def main():
     # fetch matching hashes
     r = requests.get(url)
 
+    #  handle HTTP errors
+    if not r.ok:
+        print('Wrong API response, HTTP status code: %s' % r.status_code)
+        print(r.content)
+        exit(1)
+
     pwned_hashes = {}
     for pwned_hash in r.content.decode().split('\r\n'):
         if debug:

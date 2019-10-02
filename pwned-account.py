@@ -1,4 +1,4 @@
-#!python
+#!/usr/bin/env python3
 """!!DEPRECATED!! The Have I been pwned account API is now covered by a $3.5/month fee
 and is no longer supported by this script.
 

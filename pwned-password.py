@@ -1,4 +1,4 @@
-#!python
+#!/usr/bin/env python3
 """Have I been Pwned password database check.
 
 Usage: pwned-password [--help] [options] [PASSWORD]
